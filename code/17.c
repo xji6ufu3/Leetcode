@@ -47,7 +47,7 @@ char** letterCombinations(char* digits, int* returnSize) {
     }
 
     char** result = createStringArray(maxCombinations);
-    char* current = (char*)malloc((len + 1) * sizeof(char));
+    char* current = malloc((len + 1) * sizeof(char));
     current[len] = '\0';
 
     backtrack(digits, 0, current, result, returnSize);
