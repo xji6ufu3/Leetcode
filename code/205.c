@@ -8,16 +8,13 @@
  */
 
 bool isIsomorphic(char* s, char* t) {
-    char mapa[128] = {0}, ca, mapb[128] = {0}, cb;
-    for(int i = 0; i < strlen(s); i++){
-        ca = mapa[s[i]];
-        cb = mapb[t[i]];
-        if(ca || cb){
-            if(ca != t[i] || cb != s[i]) return false;
-        } else {
-            mapa[s[i]] = t[i];
-            mapb[t[i]] = s[i];
-        }
+    char mapST[128] = {0}, mapTS[128] = {0};
+    for (int i = 0; s[i]; i++) {
+        if ((mapST[s[i]] && mapST[s[i]] != t[i]) ||
+            (mapTS[t[i]] && mapTS[t[i]] != s[i]))
+            return false;
+        mapST[s[i]] = t[i];
+        mapTS[t[i]] = s[i];
     }
     return true;
 }
