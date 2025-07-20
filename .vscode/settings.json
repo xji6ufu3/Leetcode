@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "string": "cpp",
-        "tuple": "cpp"
+        "tuple": "cpp",
+        "memory_resource": "cpp",
+        "scoped_allocator": "cpp"
     }
 }
