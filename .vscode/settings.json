@@ -3,6 +3,7 @@
         "string": "cpp",
         "tuple": "cpp",
         "memory_resource": "cpp",
-        "scoped_allocator": "cpp"
+        "scoped_allocator": "cpp",
+        "iostream": "cpp"
     }
 }
