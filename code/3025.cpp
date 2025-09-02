@@ -15,7 +15,7 @@ public:
                 int x1 = points[i][0], y1 = points[i][1];
                 int x2 = points[j][0], y2 = points[j][1];
                 
-                if (x1 >= x2 || y1 <= y2) continue;
+                if (x1 > x2 || y1 < y2) continue;
                 
                 bool valid = true;
                 for (int k = 0; k < n; k++) {
