@@ -4,3 +4,4 @@ This file records unfamiliar English terms encountered while solving LeetCode pr
 
 | English       | Chinese    | Note |
 |---------------|----------|-------------|
+| palindrome | 迴文 | unique palindromes of length three |
