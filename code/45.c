@@ -1,24 +1,19 @@
-#include <limits.h>
 #include <stdio.h>
 
 int jump(int* nums, int numsSize) {
-    int cntarr[numsSize];
-
-    cntarr[numsSize-1] = 0;
-
-    for(int i = numsSize-2; i >= 0; --i){
-        // printf("go to %d\n", i);
-        int minn = INT_MAX;
-        for(int j = 1; j <= nums[i]; ++j){
-            if(i+j == numsSize) break;
-            int currjmp = cntarr[i+j];
-            if(minn > currjmp) minn = currjmp;
+    int retjmp = 0, rptr = 0, lptr = 0;
+    while(lptr <= rptr && rptr < numsSize-1){
+        ++retjmp;
+        int newrptr = rptr;
+        for(int i = lptr; i <= rptr; ++i){
+            newrptr = i+nums[i] > newrptr ? i+nums[i] : newrptr;
         }
-        cntarr[i] = (minn < INT_MAX) ? minn+1 : INT_MAX;
-        // printf("cntarr[%d]: %d\n", i, cntarr[i]);
+        lptr = rptr + 1;
+        rptr = newrptr;
     }
-
-    return cntarr[0];
+    if(rptr >= numsSize-1){
+        return retjmp;
+    }
 }
 
 int main(){
