@@ -37,6 +37,7 @@ int longestMonotonicSubarray(int* nums, int numsSize) {
                 stat = DECREASE;
             }
         } else{
+            maxlen = maxlen > len ? maxlen : len;
             len = 1;
             stat = EQUAL;
         }
